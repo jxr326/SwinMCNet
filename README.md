@@ -21,7 +21,7 @@ Download the following datasets and unzip them into `data` folder
 
 ## The Proposed Dataset
 Our proposed RGBT SOD dataset VT723 that contain common challenging scenes of real world.
-- [VT723](https://drive.google.com/file/d/1Vi91vzn7xym238wu5QUh7URRi7jn4Vru/view?usp=sharing)
+- [VT723](https://drive.google.com/file/d/12gEUFG2yWi3uBTjLymQ3hjnDUHGcgADq/view?usp=sharing)
 
 
 ## Training & Testing & Evaluate
@@ -48,7 +48,6 @@ Our proposed RGBT SOD dataset VT723 that contain common challenging scenes of re
     main
 ```
 
-
 ## Saliency maps & Trained model
-- saliency maps: [Google](https://drive.google.com/file/d/1wsAI6yEOjzBsgbEnekrznUlQMv3zIqTg/view?usp=sharing)
-- trained model: [Google](https://drive.google.com/file/d/1qcZeBiwF78Lv24hXmXN4vMFbK4yC-C-y/view?usp=sharing)
+- saliency maps: [Google](https://drive.google.com/file/d/1LjLLIGmnKb_UQeGpFar35gyEs76EHFLL/view?usp=sharing)
+- trained model: [Google](https://drive.google.com/file/d/1D40-nIqvTmqh5CpH22c8yQA8lcee23SB/view?usp=sharing)
