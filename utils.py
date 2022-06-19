@@ -1,18 +1,31 @@
-import cv2
-import  numpy as np
+#coding=utf-8
 import os
-
-def clip_gradient(optimizer, grad_clip):
-    for group in optimizer.param_groups:
-        for param in group['params']:
-            if param.grad is not None:
-                param.grad.data.clamp_(-grad_clip, grad_clip)
+import cv2
+import numpy as np
 
 
-def adjust_lr(optimizer, init_lr, epoch, decay_rate=0.1, decay_epoch=30):
-    decay = decay_rate ** (epoch // decay_epoch)
-    for param_group in optimizer.param_groups:
-        param_group['lr'] = decay*init_lr
-        lr=param_group['lr']
-    return lr
 
+
+def split_map(datapath):
+    print(datapath)
+    for name in os.listdir(datapath+'/GT/'):
+        mask = cv2.imread(datapath+'/GT/'+name,0)
+        body = cv2.blur(mask, ksize=(5,5))
+        body = cv2.distanceTransform(body, distanceType=cv2.DIST_L2, maskSize=5)
+        body = body**0.5
+
+        tmp  = body[np.where(body>0)]
+        if len(tmp)!=0:
+            body[np.where(body>0)] = np.floor(tmp/np.max(tmp)*255)
+
+        if not os.path.exists(datapath+'/skeleton/'):
+            os.makedirs(datapath+'/skeleton/')
+        cv2.imwrite(datapath+'/skeleton/'+name, body)
+
+        if not os.path.exists(datapath+'/contour/'):
+            os.makedirs(datapath+'/contour/')
+        cv2.imwrite(datapath+'/contour/'+name, mask-body)
+
+
+if __name__=='__main__':
+    split_map('../dataset')
