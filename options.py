@@ -9,7 +9,7 @@ parser.add_argument('--testsize', type=int, default=384, help='testing dataset s
 parser.add_argument('--clip', type=float, default=0.5, help='gradient clipping margin')
 parser.add_argument('--decay_rate', type=float, default=5e-4, help='decay rate of learning rate')
 
-parser.add_argument('--load', type=str, default='/home/jxr/code/SwinMCNet-master/res/swin_base_patch4_window12_384_22k.pth')
+parser.add_argument('--load', type=str, default='../res/swin_base_patch4_window12_384_22k.pth')
 
 
 parser.add_argument('--train_data_root', type=str, default='../VT5000/Train', help='the training datasets root')
@@ -17,8 +17,8 @@ parser.add_argument('--val_data_root', type=str, default='../VT5000/Test', help=
 parser.add_argument('--test_data_root', type=str, default='../dataset/')
 
 
-parser.add_argument('--save_path', type=str, default='./res/', help='the path to save models and logs')
-parser.add_argument('--test_model', type=str, default='./res/SwinMCNet_epoch_best.pth', help='saved model path')
-parser.add_argument('--maps_path', type=str, default='./maps/', help='saved model path')
+parser.add_argument('--save_path', type=str, default='../res/', help='the path to save models and logs')
+parser.add_argument('--test_model', type=str, default='../res/SwinMCNet_epoch_best.pth', help='saved model path')
+parser.add_argument('--maps_path', type=str, default='../maps/', help='saved model path')
 
 opt = parser.parse_args()
