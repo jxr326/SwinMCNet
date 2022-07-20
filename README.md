@@ -1,5 +1,5 @@
 ## MCNet
-SwinMCNet: Mirror Complementary Network for RGB-thermal Salient Object Detection
+SwinMCNet: Mirror Complementary Transformer Network for RGB-thermal Salient Object Detection
 
 
 ## Prerequisites
